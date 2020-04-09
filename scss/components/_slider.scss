@@ -1,11 +1,13 @@
 @import '../abstracts/mixins';
 
 .home-slider {
-   position: relative;
-   top: 200px;
+   // position: relative;
+   // top: 200px;
+   margin-top: 15%;
 
    @include mobile-screen {
-      top: 20px;
+      // top: 20px;
+      margin-top: 5%;
    }
    
    .owl-dots {
