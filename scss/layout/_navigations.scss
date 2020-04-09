@@ -1,0 +1,118 @@
+@import '../abstracts/variables';
+
+.header {
+
+   .nav {
+
+      ul {
+         position: relative;
+         right: -48px;
+         transition: all .3s;
+         @include tab-screen {
+            position: absolute;
+            width: 300px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            margin: 0 auto;
+            top: 100px;
+            background: $blue;
+            box-shadow: 0px 0px 25px 2px #4640de91;
+         }
+         
+      }
+
+      li {
+         display: inline-block;
+
+         @include tab-screen {
+            display: block;
+         }
+      }
+
+      a {
+         text-decoration: none;
+         text-transform: uppercase;
+         color: $black;
+         font-weight: $bold;
+         margin: 0 14px;
+         transition: transition ease-in-out .3s;
+         animation-name: animatetop;
+         animation-duration: 0.4s;
+         display: none;
+
+         &.space {
+            margin: 0 25px;
+         }
+
+         @include tab-screen {
+            margin: 25px auto;
+            width: 100%;
+            text-align: center;
+            color: $white;
+
+            &.space {
+               display: none !important;
+            }
+         }
+      }
+   }
+
+   .nav-btn {
+      position: absolute;
+      left: 0;
+      transition: 0.70s;
+      width: 50px;
+      margin: 0 auto;
+      right: 0;
+      z-index: 9999;
+
+      @include tab-screen {
+         top: 50px;
+      }
+
+
+      
+      span {
+         background-color: $blue;
+         display: block;
+         position: absolute;
+         transition: 0.70s;
+
+         &.x-line {
+            width: 40px;
+            height: 8px;
+            top: 10px;
+         }
+         &.y-line {
+            width: 8px;
+            height: 40px;
+            top: -7px;
+            left: 16px;
+         }
+      }
+   }
+
+   .rotate {
+
+      span {
+         transform: rotate(45deg);
+         transition: 0.70s;
+
+         &.x-line {
+            width: 40px;
+            height: 8px;
+            top: 10px;
+            
+         }
+         .y-line {
+            width: 8px;
+            height: 40px;
+            top: -7px;
+            left: 17px;
+         }
+      }
+
+   }
+}
+

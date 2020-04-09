@@ -1,0 +1,59 @@
+@mixin large-screen {
+   @media (min-width: 1400px) {
+     @content;
+   }
+ }
+ 
+ @mixin medium-screen {
+   @media (max-width: 992px) {
+     @content;
+   }
+ }
+ 
+ @mixin tab-screen {
+   @media (max-width: 768px) {
+     @content;
+   }
+ }
+ 
+ @mixin mobile-screen {
+   @media (max-width: 576px) {
+     @content;
+   }
+ }
+
+
+@mixin big-header {
+  font-size: 80px;
+  font-weight: $bold;
+
+  @include medium-screen {
+    font-size: 50px;
+  }
+  @include tab-screen {
+    font-size: 40px;
+  }
+  @include mobile-screen() {
+    font-size: 30px;
+  }
+}
+
+@mixin blue-big-header {
+   @include big-header;
+   color: $blue;
+ }
+@mixin black-big-header {
+  @include big-header;
+  color: $black;
+}
+
+@mixin medium-header {
+  font-size: 40px;
+  color: $blue;
+  font-weight: $bold;
+
+  @include mobile-screen {
+    font-size: 30px;
+  }
+}
+ 

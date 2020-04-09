@@ -1,0 +1,85 @@
+
+.about-page,
+.home-page {
+   min-height: 100vh;
+   background-image: url('./../Images/bb.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: top center;
+   overflow-x: hidden;
+}
+
+.scroll {
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // margin: 0 auto;
+    // z-index: 999;
+    position: relative;
+   
+   a {
+      padding: 60px 0;
+      display: block;
+
+
+      span {
+         position: absolute;
+         top: 0;
+         left: 50%;
+         width: 29px;
+         height: 63px;
+         margin-left: -15px;
+         border: 2px solid $blue;
+         border-radius: 50px;
+         box-sizing: border-box;
+
+         &::before {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            content: '';
+            width: 7px;
+            height: 16px;
+            margin-left: -3px;
+            background-color: $blue;
+            border-radius: 3px;
+            animation: sdb 2s infinite;
+            box-sizing: border-box;
+          }
+       }
+   }
+}
+
+@-webkit-keyframes sdb {
+   0% {
+     -webkit-transform: translate(0, 0);
+     opacity: 0;
+   }
+   40% {
+     opacity: 1;
+   }
+   80% {
+     -webkit-transform: translate(0, 20px);
+     opacity: 0;
+   }
+   100% {
+     opacity: 0;
+   }
+ }
+ @keyframes sdb {
+   0% {
+     transform: translate(0, 0);
+     opacity: 0;
+   }
+   40% {
+     opacity: 1;
+   }
+   80% {
+     transform: translate(0, 20px);
+     opacity: 0;
+   }
+   100% {
+     opacity: 0;
+   }
+ }

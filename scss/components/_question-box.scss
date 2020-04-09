@@ -1,0 +1,169 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.planner-box,
+.question-box {
+  position: fixed;
+  z-index: 11111;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  overflow: auto;
+  background-color: #ffffff78;
+  transform: translate(-50%, -50%);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  display: none;
+  height: 100%;
+
+  
+
+  .wrapper {
+     max-width: 900px;
+     width: 100%;
+     left: 50%;
+     top: 50%;
+     position: absolute;
+     transform: translate(-50%, -50%);
+     box-shadow: 0px 0px 25px 2px #4640de91;
+     background-color: $white;
+     padding: 40px;
+
+   @include medium-screen {
+      max-width: 800px;
+      padding: 20px;
+   }
+ 
+   @include tab-screen {
+      max-width: 600px;
+   }
+  }
+
+  h3 {
+   @include medium-header;
+     margin-bottom: 30px;
+
+     @include tab-screen {
+        margin-bottom: 20px;
+     }
+  }
+  .close {
+   transition: ease-in-out .3s;
+   position: relative;
+   width: 50px;
+   
+   span {
+      background-color: $blue;
+      display: block;
+      position: absolute;
+
+      &.x-line {
+         width: 40px;
+         height: 3px;
+         top: 10px;
+         transform: rotate(45deg);
+      }
+
+      &.y-line {
+         width: 3px;
+         height: 40px;
+         top: -8px;
+         left: 19px;
+         transform: rotate(45deg);
+      }
+   }
+  
+}
+}
+
+.planner-form,
+.question-form {
+
+   .form-group {
+      
+      input,
+      textarea {
+      border: 1px solid $blue;
+      padding: 15px 10px;
+      color: $black;
+      margin-bottom: 20px;
+      width: 100%;
+
+      &::placeholder {
+         color: $black;
+      }
+
+         @include tab-screen {
+            padding: 5px 10px;
+            margin-bottom: 10px;
+         }
+      }
+   }
+
+   button {
+      background-color: $blue;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+      color: $white;
+      display: block;
+      width: 100%;
+   }
+
+   .phone {
+      li {
+         font-weight: $bold;
+         color: $black;
+         margin-bottom: 5px;
+
+         a {
+            font-weight: 400;
+         }
+      }
+   }
+
+}
+
+.planner-box {
+   // display: block;
+
+   h6 {
+      margin-bottom: 15px;
+   }
+
+}
+
+
+
+.social {
+
+   li {
+      display: inline-block;
+      margin: 0 10px;
+
+      i {
+         color: $black;
+
+         &:hover {
+            color: $blue;
+         }
+      }
+   }
+   
+}
+
+
+
+
+
+@keyframes animatetop {
+   0% {
+      top: -500px; 
+      opacity: 0;
+   }
+   100% {
+      top: 50%; 
+      opacity: 1;
+   }
+   
+ }

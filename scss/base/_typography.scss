@@ -1,0 +1,37 @@
+@import '../abstracts/variables';
+
+
+.wrapper {
+   max-width: 96%;
+   margin: 0 auto;
+   width: 100%;
+}
+
+.wrapper-right {
+   max-width: 98%;
+   width: 100%;
+   margin-left: auto;
+}
+
+.flex-between {
+   display: flex;
+   justify-content: space-between;
+}
+
+.flex-between-center {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+@include tab-screen {
+   .question-box  .flex-between {
+      display: block;
+      justify-content: space-between;
+   }
+}
+
+.full-width {
+   max-width: 100%;
+   width: 100%;
+   height: auto;
+}

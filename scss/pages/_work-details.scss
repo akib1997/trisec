@@ -1,0 +1,56 @@
+
+.work-details {
+
+   .tab {
+      margin-left: -4.4%;
+
+      @include medium-screen {
+         margin-left: 0;
+      }
+   }
+
+
+   .backBtn {
+      background-color: $blue;
+      color: $white;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      max-width: 240px;
+      align-items: center;
+      justify-content: space-around;
+
+      @include tab-screen {
+         padding: 10px;
+      }
+   }
+
+   h3 {
+      @include medium-header;
+      margin: 40px 0 20px;
+
+      @include tab-screen {
+         margin: 20px 0;
+      }
+   }
+
+   .tab {
+      h3 {
+         margin-top: 0;
+      }
+   }
+
+   .work-gallery {
+      .row {
+         border-bottom: 0;
+      }
+   }
+
+}
+
+.gallery-img {
+   margin: 15px 0;
+   img {
+      width: 100%;
+   }
+}

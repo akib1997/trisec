@@ -1,0 +1,141 @@
+@import '../abstracts/mixins';
+
+.about-trisec{
+
+   h3 {
+      @include medium-header;
+      margin-bottom: 30px;
+
+      @include mobile-screen {
+        margin: 15px 0;
+      }
+   }
+
+   .inner {
+      img {
+         width: 100%;
+         display: block;
+      }
+   }
+
+}
+
+.tab {
+   background-color: $white;
+   margin-left: -2.5%;
+
+   @include medium-screen {
+      margin-left: 0;
+   }
+
+   .row {
+      border-bottom: 1px solid $blue;
+      margin: 0;
+   }
+
+   .overview {
+      padding: 30px 50px;
+      animation: fadeEffect 1s;
+
+      @include mobile-screen {
+         padding: 20px 35px;
+      }
+
+      h6 {
+         margin-bottom: 20px;
+      }
+
+      p {
+         margin-bottom: 40px;
+
+         @include mobile-screen {
+            margin-bottom: 20px;
+         }
+      }
+   }
+
+   .team {
+      display: none;
+      animation: fadeEffect 1s;
+
+
+      .row {
+         padding: 30px 0;
+
+         @include tab-screen {
+            padding: 20px 0 10px;
+         }
+      }
+
+      img {
+         display: block;
+         margin: 0 auto;
+
+         @include tab-screen {
+            margin: 0 auto 10px;
+         }
+      }
+
+      p,
+      h6 {
+         margin-bottom: 10px;
+      }
+
+      h6 {
+         @include tab-screen {
+            text-align: center;
+         }
+      }
+
+      .title {
+         position: relative;
+         margin-right: 40px;
+
+         &::after {
+            content: '';
+            position: absolute;
+            right: -23px;
+            background-color: #a7acac;
+            width: 1px;
+            height: 15px;
+            top: 8px;
+         }
+      }
+   }
+
+   .team h6,
+   button {
+      color: $blue;
+      font-weight: $bold;
+      
+   }
+
+   button {
+      display: block;
+      margin: 25px auto;
+      width: 100%;
+      position: relative;
+
+      &.active {
+         
+         &::after {
+            content: '';
+            position: absolute;
+            bottom: -28px;
+            height: 5px;
+            background-color: $blue;
+            width: 110%;
+            left: -15px;
+
+            @include mobile-screen {
+               width: 115%;
+            }
+         }
+      }
+   }
+}
+
+@keyframes fadeEffect {
+   from {opacity: 0;}
+   to {opacity: 1;}
+}

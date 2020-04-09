@@ -1,0 +1,87 @@
+
+.services {
+
+   &-box {
+      background-color: $white;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 50px 0;
+      transition: all .3s;
+      border: 3px solid transparent;
+
+      &:hover {
+         border: 3px solid $blue;
+      }
+
+
+      &.big-space {
+         padding: 80px 0;
+      }
+
+      img {
+         min-height: 90px;
+      }
+
+      h6 {
+         margin-top: 30px;
+         font-weight: $bold;
+         color: $blue;
+      }
+   }
+
+   .tab {
+      margin-left: -4.5%;
+   }
+}
+
+.services .tab .team .row {
+   padding: 0;
+   border: 0;
+   margin-right: -15px;
+   margin-left: -15px;
+}
+
+.project-planner {
+   padding: 30px 50px 10px;
+
+
+   h6 {
+      color: $black !important;
+   }
+}
+
+.tooltip {
+   cursor: pointer;
+   border: 1px solid $blue;
+   color: $blue;
+   text-align: center;
+   padding: 10px 0;
+   margin-bottom: 10px;
+   text-transform: uppercase;
+   transition: ease-in-out .3s;
+
+   &:hover,
+   &.active {
+      background-color: $blue;
+      color: $white;
+   }
+}
+.tooltiptext {
+   position: relative;
+   border: 1px solid $blue;
+   padding: 3px 10px;
+   margin-bottom: 10px;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent $blue transparent;
+   }
+
+}
