@@ -1211,12 +1211,28 @@ button :focus {
   margin-top: 0;
 }
 
+.work-details .work-gallery {
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .work-details .work-gallery {
+    margin: 0 10px;
+  }
+}
+
 .work-details .work-gallery .row {
   border-bottom: 0;
 }
 
 .gallery-img {
-  margin: 15px 0;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .gallery-img {
+    margin-bottom: 20px;
+  }
 }
 
 .gallery-img img {

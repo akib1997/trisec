@@ -41,6 +41,11 @@
    }
 
    .work-gallery {
+      margin: 0 20px;
+
+      @include tab-screen {
+         margin: 0 10px;
+      }
       .row {
          border-bottom: 0;
       }
@@ -49,7 +54,12 @@
 }
 
 .gallery-img {
-   margin: 15px 0;
+   margin-bottom: 30px;
+
+   @include tab-screen {
+      margin-bottom: 20px;
+   }
+
    img {
       width: 100%;
    }
