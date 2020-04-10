@@ -444,8 +444,11 @@ button :focus {
 .delivery a:hover {
   background-color: #ffffff;
   color: #4640DE;
-  -webkit-box-shadow: 0px 0px 25px 2px #4640de91;
-          box-shadow: 0px 0px 25px 2px #4640de91;
+  -webkit-box-shadow: 0px 0px 10px 1px #4640de21;
+          box-shadow: 0px 0px 10px 1px #4640de21;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  font-size: 16px;
 }
 
 .work-slider,
@@ -1101,7 +1104,7 @@ button :focus {
 
 @media (max-width: 768px) {
   .custom-select {
-    width: 250px;
+    width: 230px;
   }
 }
 
@@ -1163,6 +1166,7 @@ button :focus {
 
 .overly-box {
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .overly-box a {
@@ -1176,18 +1180,27 @@ button :focus {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
+  top: 0;
+  background-position: 0;
+}
+
+.overly-box a:hover img {
+  margin-left: 0;
 }
 
 .overly-box img {
   display: block;
   width: 100%;
+  margin-left: 15px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .overly-box p {
   position: absolute;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  top: 0;
+  top: 10%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1203,6 +1216,7 @@ button :focus {
   font-weight: 700;
   color: #ffffff;
   background-color: #4640DEAD;
+  background-position: -100px;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
