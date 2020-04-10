@@ -368,8 +368,18 @@ button :focus {
   font-weight: 700;
   color: #202430;
   position: relative;
-  display: inline-block;
-  margin-bottom: 55px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 2s steps(17) 1s 1 normal both, blink-caret 0.6s steps(17) infinite;
+          animation: typing 2s steps(17) 1s 1 normal both, blink-caret 0.6s steps(17) infinite;
+  border-right: 7px solid #4640DE;
+  padding-right: 15px;
+  margin: 0 auto 50px;
+  line-height: 80px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
 }
 
 @media (max-width: 992px) {
@@ -390,20 +400,24 @@ button :focus {
   }
 }
 
+@media (max-width: 768px) {
+  .delivery h2 {
+    border-right: 5px solid #4640DE;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .delivery h2 {
+    border-right: 4px solid #4640DE;
+    line-height: 35px;
+  }
+}
+
 .delivery h2 span {
   color: #4640DE;
   font-size: inherit;
   font-weight: inherit;
-}
-
-.delivery h2::after {
-  content: '';
-  position: absolute;
-  right: -30px;
-  height: 70%;
-  width: 7px;
-  background-color: #4640DE;
-  top: 15px;
 }
 
 .delivery a {
@@ -515,6 +529,42 @@ button :focus {
 
 .slider-services .box {
   padding-top: 40px;
+}
+
+/* The typing effect */
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7em;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7em;
+  }
+}
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4640DE;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4640DE;
+  }
 }
 
 .header .nav ul {

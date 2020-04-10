@@ -76,8 +76,30 @@
    h2 {
       @include black-big-header;
       position: relative;
-      display: inline-block;
-      margin-bottom: 55px;
+      // display: inline-block;
+      // margin-bottom: 55px;
+
+      white-space: nowrap;
+      overflow: hidden;
+    
+      animation: typing 2s steps(17) 1s 1 normal both, blink-caret .6s steps(17) infinite;
+    
+      border-right: 7px solid $blue;
+      padding-right: 15px;
+      margin: 0 auto 50px;
+      line-height: 80px;
+      // animation-iteration-count: infinite;
+      animation-delay: 1s;
+      transition: ease-in-out;
+
+      @include tab-screen {
+         border-right: 5px solid $blue;
+         line-height: 50px;
+      }
+      @include mobile-screen {
+         border-right: 4px solid $blue;
+         line-height: 35px;
+      }
 
       span {
          color: $blue;
@@ -85,15 +107,15 @@
          font-weight: inherit;
       }
 
-      &::after {
-         content: '';
-         position: absolute;
-         right: -30px;
-         height: 70%;
-         width: 7px;
-         background-color: #4640DE;
-         top: 15px;
-      }
+      // &::after {
+      //    content: '';
+      //    position: absolute;
+      //    right: -30px;
+      //    height: 70%;
+      //    width: 7px;
+      //    background-color: #4640DE;
+      //    top: 15px;
+      // }
    }
 
    a {
@@ -180,3 +202,15 @@
       padding-top: 40px;
    }
 }
+
+/* The typing effect */
+@keyframes typing {
+   from { width: 0 }
+   to { width: 7em }
+ }
+ 
+ /* The typewriter cursor effect */
+ @keyframes blink-caret {
+   from, to { border-color: transparent }
+   50% { border-color: $blue; }
+ }
