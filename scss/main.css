@@ -329,9 +329,13 @@ button :focus {
 }
 
 .home-slider .owl-carousel .nav-btn {
-  height: 47px;
-  width: 35px;
+  height: 45px;
+  width: 30px;
   cursor: pointer;
+}
+
+.home-slider .owl-theme .owl-nav [class*=owl-] {
+  margin: 0 8px;
 }
 
 .home-slider .owl-carousel .prev-slide {

@@ -42,9 +42,13 @@
    // Customize Button
 
    .owl-carousel .nav-btn{
-      height: 47px;
-      width: 35px;
+      height: 45px;
+      width: 30px;
       cursor: pointer;
+  }
+
+  .owl-theme .owl-nav [class*=owl-] {
+     margin: 0 8px;
   }
 
  
