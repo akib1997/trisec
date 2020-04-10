@@ -16,6 +16,10 @@
   display: none;
   height: 100%;
 
+  @include mobile-screen {
+     top: 60%;
+  }
+
   
 
   .wrapper {

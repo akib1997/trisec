@@ -100,6 +100,13 @@ button :focus {
   height: 100%;
 }
 
+@media (max-width: 576px) {
+  .planner-box,
+  .question-box {
+    top: 60%;
+  }
+}
+
 .planner-box .wrapper,
 .question-box .wrapper {
   max-width: 900px;
