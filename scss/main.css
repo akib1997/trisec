@@ -88,7 +88,6 @@ button :focus {
   left: 0;
   top: 0;
   width: 100%;
-  overflow: auto;
   background-color: #ffffff78;
   -webkit-animation-name: animatetop;
           animation-name: animatetop;
@@ -309,10 +308,15 @@ button :focus {
   top: 20%;
 }
 
+@media (max-width: 768px) {
+  .home-slider .owl-dots {
+    top: 75%;
+  }
+}
+
 @media (max-width: 576px) {
   .home-slider .owl-dots {
-    top: -4%;
-    right: 35px;
+    display: none;
   }
 }
 
@@ -737,7 +741,7 @@ button :focus {
 .about-page,
 .home-page {
   min-height: 100vh;
-  background-image: url("./../Images/bb.png");
+  background-image: url("./../Images/page-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;

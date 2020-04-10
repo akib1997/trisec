@@ -1,0 +1,19 @@
+
+
+1.Heading on Mobile (android or iphone)
+Fix this by Removing 3 bar menu on Mobile
+
+
+2.Double scroll bar
+Fix this by Removing overflow: auto;
+
+3=== Not Done
+
+4.Mouse animation
+Fix this by set services.html in href.
+
+5.Responsiveness (ipad air 2019)
+Fix this by add margin-top
+
+6.Responsiveness (ipad air 2019)
+Fix this by add col-lg-6 instead of col-6

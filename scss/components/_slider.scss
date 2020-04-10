@@ -19,13 +19,12 @@
       // @include medium-screen {
       //    right: 20px;
       // }
-      // @include tab-screen {
-      //    right: 30px;
-      // }
+      @include tab-screen {
+         top: 75%;
+      }
 
       @include mobile-screen {
-         top: -4%;
-         right: 35px;
+         display: none;
       }
    }
    .owl-theme .owl-dots .owl-dot span {
