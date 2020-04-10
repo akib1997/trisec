@@ -6,7 +6,7 @@
 
       ul {
          position: relative;
-         right: -48px;
+         right: -50px;
          transition: all .3s;
          @include tab-screen {
             position: absolute;
@@ -62,7 +62,7 @@
       position: absolute;
       left: 0;
       transition: 0.70s;
-      width: 50px;
+      width: 40px;
       margin: 0 auto;
       right: 0;
       z-index: 9999;

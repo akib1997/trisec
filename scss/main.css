@@ -569,7 +569,7 @@ button :focus {
 
 .header .nav ul {
   position: relative;
-  right: -48px;
+  right: -50px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -637,7 +637,7 @@ button :focus {
   left: 0;
   -webkit-transition: 0.70s;
   transition: 0.70s;
-  width: 50px;
+  width: 40px;
   margin: 0 auto;
   right: 0;
   z-index: 9999;
