@@ -33,6 +33,11 @@
  
    @include tab-screen {
       max-width: 600px;
+      margin: 10% 0;
+   }
+
+   @include mobile-screen {
+      margin: 5% 0;
    }
   }
 
