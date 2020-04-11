@@ -12,8 +12,13 @@
   background-color: #ffffff78;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  transition: ease-in-out .3s;
   display: none;
   height: 100%;
+
+  @include mobile-screen {
+     overflow: scroll;
+  }
 
 
   
@@ -33,11 +38,11 @@
  
    @include tab-screen {
       max-width: 600px;
-      margin: 10% 0;
+      margin: 10% auto;
    }
 
    @include mobile-screen {
-      margin: 5% 0;
+      margin: 5% auto;
    }
   }
 

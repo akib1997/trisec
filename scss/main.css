@@ -93,8 +93,17 @@ button :focus {
           animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
           animation-duration: 0.4s;
+  -webkit-transition: ease-in-out .3s;
+  transition: ease-in-out .3s;
   display: none;
   height: 100%;
+}
+
+@media (max-width: 576px) {
+  .planner-box,
+  .question-box {
+    overflow: scroll;
+  }
 }
 
 .planner-box .wrapper,
@@ -120,14 +129,14 @@ button :focus {
   .planner-box .wrapper,
   .question-box .wrapper {
     max-width: 600px;
-    margin: 10% 0;
+    margin: 10% auto;
   }
 }
 
 @media (max-width: 576px) {
   .planner-box .wrapper,
   .question-box .wrapper {
-    margin: 5% 0;
+    margin: 5% auto;
   }
 }
 
