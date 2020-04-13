@@ -392,9 +392,19 @@ button:active {
   }
 }
 
-@media (min-width: 1400px) {
+.home-slider {
+  margin-top: 5%;
+}
+
+@media (min-width: 1370px) {
   .home-slider {
     margin-top: 12%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-slider {
+    margin-top: 8%;
   }
 }
 
@@ -406,13 +416,13 @@ button:active {
   top: 20%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .home-slider .owl-dots {
     top: 75%;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .home-slider .owl-dots {
     display: none;
   }
@@ -841,7 +851,8 @@ button:active {
 }
 
 .scroll {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
@@ -944,7 +955,7 @@ button:active {
   margin-top: 80px;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1370px) {
   .about-trisec .about-header {
     margin-top: 110px;
   }

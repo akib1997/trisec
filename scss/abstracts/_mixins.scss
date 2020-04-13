@@ -1,5 +1,5 @@
 @mixin large-screen {
-   @media (min-width: 1400px) {
+   @media (min-width: 1370px) {
      @content;
    }
  }

@@ -1,22 +1,26 @@
 @import '../abstracts/mixins';
 
 .home-slider {
+   margin-top: 5%;
 
    @include large-screen {
       margin-top: 12%;
    }
    
+   @include medium-screen {
+      margin-top: 8%;
+   }
    .owl-dots {
       transform: rotate(90deg);
       position: absolute;
       right: 10px;
       top: 20%;
 
-      @include tab-screen {
+      @include medium-screen {
          top: 75%;
       }
 
-      @include mobile-screen {
+      @include tab-screen {
          display: none;
       }
    }
