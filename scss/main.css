@@ -17,6 +17,7 @@ li {
   list-style: none;
 }
 
+a:hover,
 a {
   text-decoration: none;
   color: inherit;
@@ -29,8 +30,14 @@ button {
   cursor: pointer;
 }
 
-button :focus {
+button:focus {
   outline: 0;
+  border: 0;
+}
+
+button:active {
+  outline: 0;
+  border: 0;
 }
 
 .wrapper {
@@ -81,104 +88,82 @@ button :focus {
   height: auto;
 }
 
-.planner-box,
-.question-box {
-  position: fixed;
-  z-index: 11111;
-  left: 0;
-  top: 0;
-  width: 100%;
+.question-box,
+.planner-box {
   background-color: #ffffff78;
-  -webkit-animation-name: animatetop;
-          animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
-  -webkit-transition: ease-in-out .3s;
-  transition: ease-in-out .3s;
-  display: none;
-  height: 100%;
 }
 
-@media (max-width: 576px) {
-  .planner-box,
-  .question-box {
-    overflow: scroll;
-  }
-}
-
-.planner-box .wrapper,
-.question-box .wrapper {
-  max-width: 900px;
-  width: 100%;
-  margin: 15% auto;
+.question-box .modal-content,
+.planner-box .modal-content {
   -webkit-box-shadow: 0px 0px 25px 2px #4640de91;
           box-shadow: 0px 0px 25px 2px #4640de91;
-  background-color: #ffffff;
   padding: 40px;
+  border: 0;
+  border-radius: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-@media (max-width: 992px) {
-  .planner-box .wrapper,
-  .question-box .wrapper {
+@media (max-width: 1024px) {
+  .question-box .modal-content,
+  .planner-box .modal-content {
     max-width: 800px;
     padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .planner-box .wrapper,
-  .question-box .wrapper {
+  .question-box .modal-content,
+  .planner-box .modal-content {
     max-width: 600px;
-    margin: 10% auto;
   }
 }
 
-@media (max-width: 576px) {
-  .planner-box .wrapper,
-  .question-box .wrapper {
-    margin: 5% auto;
-  }
+.question-box .modal-dialog,
+.planner-box .modal-dialog {
+  max-width: 900px;
 }
 
-.planner-box h3,
-.question-box h3 {
+.question-box .modal-header,
+.planner-box .modal-header {
+  border-bottom: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.question-box .modal-header h3,
+.planner-box .modal-header h3 {
   font-size: 40px;
   color: #4640DE;
   font-weight: 700;
-  margin-bottom: 30px;
 }
 
 @media (max-width: 576px) {
-  .planner-box h3,
-  .question-box h3 {
+  .question-box .modal-header h3,
+  .planner-box .modal-header h3 {
     font-size: 30px;
   }
 }
 
-@media (max-width: 768px) {
-  .planner-box h3,
-  .question-box h3 {
-    margin-bottom: 20px;
-  }
-}
-
-.planner-box .close,
-.question-box .close {
+.question-box .modal-header button,
+.planner-box .modal-header button {
   -webkit-transition: ease-in-out .3s;
   transition: ease-in-out .3s;
   position: relative;
   width: 50px;
+  margin-top: 15px;
+  height: 40px;
 }
 
-.planner-box .close span,
-.question-box .close span {
+.question-box .modal-header button span,
+.planner-box .modal-header button span {
   background-color: #4640DE;
   display: block;
   position: absolute;
 }
 
-.planner-box .close span.x-line,
-.question-box .close span.x-line {
+.question-box .modal-header button span.x-line,
+.planner-box .modal-header button span.x-line {
   width: 40px;
   height: 3px;
   top: 10px;
@@ -186,8 +171,8 @@ button :focus {
           transform: rotate(45deg);
 }
 
-.planner-box .close span.y-line,
-.question-box .close span.y-line {
+.question-box .modal-header button span.y-line,
+.planner-box .modal-header button span.y-line {
   width: 3px;
   height: 40px;
   top: -8px;
@@ -196,64 +181,115 @@ button :focus {
           transform: rotate(45deg);
 }
 
-.planner-form .form-group input,
-.planner-form .form-group textarea,
-.question-form .form-group input,
-.question-form .form-group textarea {
+.question-box .modal-body,
+.planner-box .modal-body {
+  padding: 0;
+}
+
+.planner-form label,
+.question-form label {
+  display: block;
+}
+
+.planner-form input,
+.planner-form textarea,
+.question-form input,
+.question-form textarea {
   border: 1px solid #4640DE;
   padding: 15px 10px;
+  margin-bottom: 15px;
   color: #202430;
-  margin-bottom: 20px;
   width: 100%;
 }
 
-.planner-form .form-group input::-webkit-input-placeholder,
-.planner-form .form-group textarea::-webkit-input-placeholder,
-.question-form .form-group input::-webkit-input-placeholder,
-.question-form .form-group textarea::-webkit-input-placeholder {
+.planner-form input::-webkit-input-placeholder,
+.planner-form textarea::-webkit-input-placeholder,
+.question-form input::-webkit-input-placeholder,
+.question-form textarea::-webkit-input-placeholder {
+  color: #202430;
+  opacity: 1;
+  /* Firefox */
+}
+
+.planner-form input:-ms-input-placeholder,
+.planner-form textarea:-ms-input-placeholder,
+.question-form input:-ms-input-placeholder,
+.question-form textarea:-ms-input-placeholder {
+  color: #202430;
+  opacity: 1;
+  /* Firefox */
+}
+
+.planner-form input::-ms-input-placeholder,
+.planner-form textarea::-ms-input-placeholder,
+.question-form input::-ms-input-placeholder,
+.question-form textarea::-ms-input-placeholder {
+  color: #202430;
+  opacity: 1;
+  /* Firefox */
+}
+
+.planner-form input::placeholder,
+.planner-form textarea::placeholder,
+.question-form input::placeholder,
+.question-form textarea::placeholder {
+  color: #202430;
+  opacity: 1;
+  /* Firefox */
+}
+
+.planner-form input:-ms-input-placeholder,
+.planner-form textarea:-ms-input-placeholder,
+.question-form input:-ms-input-placeholder,
+.question-form textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #202430;
 }
 
-.planner-form .form-group input:-ms-input-placeholder,
-.planner-form .form-group textarea:-ms-input-placeholder,
-.question-form .form-group input:-ms-input-placeholder,
-.question-form .form-group textarea:-ms-input-placeholder {
-  color: #202430;
-}
-
-.planner-form .form-group input::-ms-input-placeholder,
-.planner-form .form-group textarea::-ms-input-placeholder,
-.question-form .form-group input::-ms-input-placeholder,
-.question-form .form-group textarea::-ms-input-placeholder {
-  color: #202430;
-}
-
-.planner-form .form-group input::placeholder,
-.planner-form .form-group textarea::placeholder,
-.question-form .form-group input::placeholder,
-.question-form .form-group textarea::placeholder {
+.planner-form input::-ms-input-placeholder,
+.planner-form textarea::-ms-input-placeholder,
+.question-form input::-ms-input-placeholder,
+.question-form textarea::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #202430;
 }
 
 @media (max-width: 768px) {
-  .planner-form .form-group input,
-  .planner-form .form-group textarea,
-  .question-form .form-group input,
-  .question-form .form-group textarea {
+  .planner-form input,
+  .planner-form textarea,
+  .question-form input,
+  .question-form textarea {
     padding: 5px 10px;
     margin-bottom: 10px;
   }
 }
 
-.planner-form button,
-.question-form button {
+@media (max-width: 576px) {
+  .planner-form input,
+  .planner-form textarea,
+  .question-form input,
+  .question-form textarea {
+    margin-bottom: 5px;
+  }
+}
+
+.planner-form .submit,
+.question-form .submit {
   background-color: #4640DE;
   text-align: center;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 17px 0;
   color: #ffffff;
   display: block;
   width: 100%;
+  margin-top: 15px;
+  -webkit-transition: ease .4s;
+  transition: ease .4s;
+}
+
+.planner-form .submit:hover,
+.question-form .submit:hover {
+  background-color: #17129B;
 }
 
 .planner-form .phone li,
@@ -270,6 +306,12 @@ button :focus {
 
 .planner-box h6 {
   margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.question-form p,
+.question-form ul {
+  margin-bottom: 0;
 }
 
 .social li {
@@ -283,6 +325,49 @@ button :focus {
 
 .social li i:hover {
   color: #4640DE;
+}
+
+.project-tab a {
+  text-transform: uppercase;
+  color: #4640DE;
+  position: relative;
+  border: 1px solid #4640DE;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  -webkit-transition: ease-in-out .3s;
+  transition: ease-in-out .3s;
+  width: 32%;
+}
+
+@media (max-width: 576px) {
+  .project-tab a {
+    width: 100%;
+  }
+}
+
+.project-tab a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #4640DE transparent;
+}
+
+.project-tab a.active {
+  background-color: #4640DE;
+  color: #ffffff;
+}
+
+.project-tab .tab-content {
+  border: 1px solid #4640DE;
+  padding: 3px 10px;
 }
 
 @-webkit-keyframes animatetop {
@@ -307,13 +392,9 @@ button :focus {
   }
 }
 
-.home-slider {
-  margin-top: 15%;
-}
-
-@media (max-width: 576px) {
+@media (min-width: 1400px) {
   .home-slider {
-    margin-top: 5%;
+    margin-top: 12%;
   }
 }
 
@@ -393,21 +474,14 @@ button :focus {
   font-weight: 700;
   color: #202430;
   position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-animation: typing 2s steps(17) 1s 1 normal both, blink-caret 0.6s steps(17) infinite;
-          animation: typing 2s steps(17) 1s 1 normal both, blink-caret 0.6s steps(17) infinite;
-  border-right: 7px solid #4640DE;
   padding-right: 15px;
   margin: 0 auto 50px;
   line-height: 80px;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-transition: ease-in-out;
-  transition: ease-in-out;
+  -webkit-transition: ease .9s;
+  transition: ease .9s;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .delivery h2 {
     font-size: 50px;
   }
@@ -427,16 +501,24 @@ button :focus {
 
 @media (max-width: 768px) {
   .delivery h2 {
-    border-right: 5px solid #4640DE;
     line-height: 50px;
   }
 }
 
 @media (max-width: 576px) {
   .delivery h2 {
-    border-right: 4px solid #4640DE;
     line-height: 35px;
   }
+}
+
+.delivery h2::after {
+  content: '|';
+  -webkit-animation-name: blinking;
+          animation-name: blinking;
+  -webkit-animation-duration: .71s;
+          animation-duration: .71s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .delivery h2 span {
@@ -476,6 +558,13 @@ button :focus {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .work-slider,
+  .slider-services {
+    max-width: 500px;
+  }
+}
+
 .work-slider h2,
 .slider-services h2 {
   font-size: 80px;
@@ -484,7 +573,7 @@ button :focus {
   margin-bottom: 30px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .work-slider h2,
   .slider-services h2 {
     font-size: 50px;
@@ -559,39 +648,21 @@ button :focus {
   padding-top: 40px;
 }
 
-/* The typing effect */
-@-webkit-keyframes typing {
+@-webkit-keyframes blinking {
   from {
-    width: 0;
+    color: transparent;
   }
   to {
-    width: 7em;
-  }
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 7em;
+    color: #4640DE;
   }
 }
 
-/* The typewriter cursor effect */
-@-webkit-keyframes blink-caret {
-  from, to {
-    border-color: transparent;
+@keyframes blinking {
+  from {
+    color: transparent;
   }
-  50% {
-    border-color: #4640DE;
-  }
-}
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #4640DE;
+  to {
+    color: #4640DE;
   }
 }
 
@@ -611,9 +682,6 @@ button :focus {
     z-index: 999;
     margin: 0 auto;
     top: 100px;
-    background: #4640DE;
-    -webkit-box-shadow: 0px 0px 25px 2px #4640de91;
-            box-shadow: 0px 0px 25px 2px #4640de91;
   }
 }
 
@@ -633,15 +701,17 @@ button :focus {
   color: #202430;
   font-weight: 700;
   margin: 0 14px;
-  -webkit-transition: -webkit-transition ease-in-out .3s;
-  transition: -webkit-transition ease-in-out .3s;
-  transition: transition ease-in-out .3s;
-  transition: transition ease-in-out .3s, -webkit-transition ease-in-out .3s;
-  -webkit-animation-name: animatetop;
-          animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.header .nav a.show {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
 }
 
 .header .nav a.space {
@@ -650,10 +720,13 @@ button :focus {
 
 @media (max-width: 768px) {
   .header .nav a {
-    margin: 25px auto;
+    margin: 0 auto;
     width: 100%;
     text-align: center;
     color: #ffffff;
+    display: block;
+    background-color: #4640DE;
+    padding: 10px 0;
   }
   .header .nav a.space {
     display: none !important;
@@ -668,7 +741,7 @@ button :focus {
   width: 40px;
   margin: 0 auto;
   right: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 @media (max-width: 768px) {
@@ -681,8 +754,8 @@ button :focus {
   background-color: #4640DE;
   display: block;
   position: absolute;
-  -webkit-transition: 0.70s;
-  transition: 0.70s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .header .nav-btn span.x-line {
@@ -701,8 +774,8 @@ button :focus {
 .header .rotate span {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition: 0.70s;
-  transition: 0.70s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .header .rotate span.x-line {
@@ -768,11 +841,16 @@ button :focus {
 }
 
 .scroll {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  margin: 0 auto 20px;
 }
 
 .scroll a {
-  padding: 50px 0;
+  padding: 30px 0;
   display: block;
 }
 
@@ -862,7 +940,29 @@ button :focus {
   }
 }
 
-.about-trisec .inner img {
+.about-trisec .about-header {
+  margin-top: 80px;
+}
+
+@media (min-width: 1400px) {
+  .about-trisec .about-header {
+    margin-top: 110px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-trisec .about-header {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-trisec .about-header {
+    margin-top: 5px;
+  }
+}
+
+.about-trisec .about-header img {
   width: 100%;
   display: block;
 }
@@ -872,7 +972,7 @@ button :focus {
   margin-left: -2.5%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .tab {
     margin-left: 0;
   }
@@ -897,6 +997,7 @@ button :focus {
 
 .tab .overview h6 {
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .tab .overview p {
@@ -1010,10 +1111,8 @@ button :focus {
 }
 
 .services-box {
-  background-color: #ffffff;
   text-align: center;
   margin-bottom: 20px;
-  padding: 50px 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -1033,10 +1132,10 @@ button :focus {
 }
 
 .services-box::before {
-  top: 30px;
-  right: 30px;
-  bottom: 30px;
-  left: 30px;
+  top: 25px;
+  right: 20px;
+  bottom: 25px;
+  left: 20px;
   border-top: 1px solid #4640DE;
   border-bottom: 1px solid #4640DE;
   -webkit-transform: scale(0, 1);
@@ -1047,9 +1146,9 @@ button :focus {
 
 .services-box::after {
   top: 15px;
-  right: 50px;
+  right: 30px;
   bottom: 15px;
-  left: 50px;
+  left: 30px;
   border-right: 1px solid #4640DE;
   border-left: 1px solid #4640DE;
   -webkit-transform: scale(1, 0);
@@ -1067,20 +1166,7 @@ button :focus {
 }
 
 .services-box.big-space {
-  padding: 80px 0;
-}
-
-.services-box img,
-.services-box h6 {
-  position: relative;
-  top: -20px;
-  -webkit-transition: ease-in-out .3s;
-  transition: ease-in-out .3s;
-}
-
-.services-box:hover img,
-.services-box:hover h6 {
-  top: 0;
+  padding: 80px 30px;
 }
 
 .services-box img {
@@ -1091,10 +1177,29 @@ button :focus {
   margin-top: 30px;
   font-weight: 700;
   color: #4640DE;
+  line-height: 30px;
 }
 
 .services .tab {
   margin-left: -4.5%;
+}
+
+.services .services-box {
+  padding: 50px 30px;
+  background-color: #ffffff;
+}
+
+.services .services-box img,
+.services .services-box h6 {
+  position: relative;
+  top: -20px;
+  -webkit-transition: ease-in-out .3s;
+  transition: ease-in-out .3s;
+}
+
+.services .services-box:hover img,
+.services .services-box:hover h6 {
+  top: 0;
 }
 
 .services .tab .team .row {
@@ -1110,42 +1215,6 @@ button :focus {
 
 .project-planner h6 {
   color: #202430 !important;
-}
-
-.tooltip {
-  cursor: pointer;
-  border: 1px solid #4640DE;
-  color: #4640DE;
-  text-align: center;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  -webkit-transition: ease-in-out .3s;
-  transition: ease-in-out .3s;
-}
-
-.tooltip:hover, .tooltip.active {
-  background-color: #4640DE;
-  color: #ffffff;
-}
-
-.tooltiptext {
-  position: relative;
-  border: 1px solid #4640DE;
-  padding: 3px 10px;
-  margin-bottom: 10px;
-}
-
-.tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #4640DE transparent;
 }
 
 .works {
@@ -1174,6 +1243,9 @@ button :focus {
   width: 300px;
   border: 1px solid #4640DE;
   position: relative;
+  background: unset;
+  border-radius: 0;
+  height: unset;
 }
 
 @media (max-width: 768px) {
@@ -1296,7 +1368,7 @@ button :focus {
       -ms-flex-pack: center;
           justify-content: center;
   border: 1px solid #fff;
-  z-index: 99;
+  z-index: 9;
   -webkit-transform: translate3d(-20px, 0, 0);
           transform: translate3d(-20px, 0, 0);
   opacity: 0;
@@ -1326,7 +1398,7 @@ button :focus {
   margin-left: -4.4%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .work-details .tab {
     margin-left: 0;
   }

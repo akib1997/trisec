@@ -8,6 +8,7 @@
          position: relative;
          right: -50px;
          transition: all .3s;
+
          @include tab-screen {
             position: absolute;
             width: 300px;
@@ -16,8 +17,6 @@
             z-index: 999;
             margin: 0 auto;
             top: 100px;
-            background: $blue;
-            box-shadow: 0px 0px 25px 2px #4640de91;
          }
          
       }
@@ -36,20 +35,28 @@
          color: $black;
          font-weight: $bold;
          margin: 0 14px;
-         transition: transition ease-in-out .3s;
-         animation-name: animatetop;
-         animation-duration: 0.4s;
-         display: none;
+         opacity: 0;
+         visibility: hidden;
+         transition: all 0.5s ease-in-out;
+
+         &.show {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            visibility: visible;
+         }
 
          &.space {
             margin: 0 25px;
          }
 
          @include tab-screen {
-            margin: 25px auto;
+            margin: 0 auto;
             width: 100%;
             text-align: center;
             color: $white;
+            display: block;
+            background-color: $blue;
+            padding: 10px 0;
 
             &.space {
                display: none !important;
@@ -65,7 +72,7 @@
       width: 40px;
       margin: 0 auto;
       right: 0;
-      z-index: 9999;
+      z-index: 999;
 
       @include tab-screen {
          top: 50px;
@@ -77,7 +84,7 @@
          background-color: $blue;
          display: block;
          position: absolute;
-         transition: 0.70s;
+         transition: 0.5s;
 
          &.x-line {
             width: 40px;
@@ -97,7 +104,7 @@
 
       span {
          transform: rotate(45deg);
-         transition: 0.70s;
+         transition: 0.5s;
 
          &.x-line {
             width: 40px;

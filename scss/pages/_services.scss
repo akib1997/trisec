@@ -2,10 +2,8 @@
 .services {
 
    &-box {
-      background-color: $white;
       text-align: center;
       margin-bottom: 20px;
-      padding: 50px 0;
       transition: opacity 0.35s, transform 0.35s;
       position: relative;
       cursor: pointer;
@@ -19,10 +17,10 @@
       }
 
       &::before {
-         top: 30px;
-         right: 30px;
-         bottom: 30px;
-         left: 30px;
+         top: 25px;
+         right: 20px;
+         bottom: 25px;
+         left: 20px;
          border-top: 1px solid $blue;
          border-bottom: 1px solid $blue;
          transform: scale(0,1);
@@ -31,9 +29,9 @@
       }
       &::after {
          top: 15px;
-         right: 50px;
+         right: 30px;
          bottom: 15px;
-         left: 50px;
+         left: 30px;
          border-right: 1px solid $blue;
          border-left: 1px solid $blue;
          transform: scale(1,0);
@@ -50,20 +48,9 @@
 
 
       &.big-space {
-         padding: 80px 0;
+         padding: 80px 30px;
       }
 
-      img,
-      h6 {
-         position: relative;
-         top: -20px;
-         transition: ease-in-out .3s;
-      }
-
-      &:hover img,
-      &:hover h6 {
-         top: 0;
-      }
 
       img {
          min-height: 90px;
@@ -73,6 +60,7 @@
          margin-top: 30px;
          font-weight: $bold;
          color: $blue;
+         line-height: 30px;
       }
    }
 
@@ -81,6 +69,21 @@
    }
 }
 
+.services .services-box {
+   padding: 50px 30px;
+   background-color: $white;
+
+   img,
+   h6 {
+      position: relative;
+      top: -20px;
+      transition: ease-in-out .3s;
+   }
+   &:hover img,
+   &:hover h6 {
+      top: 0;
+   }
+}
 .services .tab .team .row {
    padding: 0;
    border: 0;
@@ -94,41 +97,6 @@
 
    h6 {
       color: $black !important;
-   }
-}
-
-.tooltip {
-   cursor: pointer;
-   border: 1px solid $blue;
-   color: $blue;
-   text-align: center;
-   padding: 10px 0;
-   margin-bottom: 10px;
-   text-transform: uppercase;
-   transition: ease-in-out .3s;
-
-   &:hover,
-   &.active {
-      background-color: $blue;
-      color: $white;
-   }
-}
-.tooltiptext {
-   position: relative;
-   border: 1px solid $blue;
-   padding: 3px 10px;
-   margin-bottom: 10px;
-
-   &::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: 10px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 10px 10px 10px;
-      border-color: transparent transparent $blue transparent;
    }
 
 }

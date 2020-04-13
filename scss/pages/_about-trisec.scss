@@ -11,7 +11,22 @@
       }
    }
 
-   .inner {
+   .about-header {
+
+      margin-top: 80px;
+
+      @include large-screen {
+         margin-top: 110px;
+      }
+
+      @include medium-screen {
+         margin-top: 50px;
+      }
+
+      @include mobile-screen {
+         margin-top: 5px;
+      }
+
       img {
          width: 100%;
          display: block;
@@ -43,6 +58,7 @@
 
       h6 {
          margin-bottom: 20px;
+         font-weight: $bold;
       }
 
       p {

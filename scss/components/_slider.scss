@@ -1,13 +1,9 @@
 @import '../abstracts/mixins';
 
 .home-slider {
-   // position: relative;
-   // top: 200px;
-   margin-top: 15%;
 
-   @include mobile-screen {
-      // top: 20px;
-      margin-top: 5%;
+   @include large-screen {
+      margin-top: 12%;
    }
    
    .owl-dots {
@@ -16,9 +12,6 @@
       right: 10px;
       top: 20%;
 
-      // @include medium-screen {
-      //    right: 20px;
-      // }
       @include tab-screen {
          top: 75%;
       }
@@ -79,29 +72,23 @@
    h2 {
       @include black-big-header;
       position: relative;
-      // display: inline-block;
-      // margin-bottom: 55px;
-
-      white-space: nowrap;
-      overflow: hidden;
-    
-      animation: typing 2s steps(17) 1s 1 normal both, blink-caret .6s steps(17) infinite;
-    
-      border-right: 7px solid $blue;
       padding-right: 15px;
       margin: 0 auto 50px;
       line-height: 80px;
-      // animation-iteration-count: infinite;
-      animation-delay: 1s;
-      transition: ease-in-out;
+      transition: ease .9s;
 
       @include tab-screen {
-         border-right: 5px solid $blue;
          line-height: 50px;
       }
       @include mobile-screen {
-         border-right: 4px solid $blue;
          line-height: 35px;
+      }
+
+      &::after {
+         content: '|';
+         animation-name: blinking; 
+         animation-duration: .71s; 
+         animation-iteration-count: infinite;
       }
 
       span {
@@ -109,16 +96,6 @@
          font-size: inherit;
          font-weight: inherit;
       }
-
-      // &::after {
-      //    content: '';
-      //    position: absolute;
-      //    right: -30px;
-      //    height: 70%;
-      //    width: 7px;
-      //    background-color: #4640DE;
-      //    top: 15px;
-      // }
    }
 
    a {
@@ -148,6 +125,10 @@
    max-width: 800px;
    width: 100%;
    margin: 0 auto;
+
+   @include tab-screen {
+      max-width: 500px;
+   }
 
    h2 {
       @include blue-big-header;
@@ -208,14 +189,11 @@
    }
 }
 
-/* The typing effect */
-@keyframes typing {
-   from { width: 0 }
-   to { width: 7em }
- }
- 
- /* The typewriter cursor effect */
- @keyframes blink-caret {
-   from, to { border-color: transparent }
-   50% { border-color: $blue; }
- }
+@keyframes blinking{
+   from{
+       color: transparent; 
+   }
+   to{
+       color: $blue; 
+   }
+}

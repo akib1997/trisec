@@ -16,6 +16,7 @@ body {
 li {
    list-style: none;
 }
+a:hover,
 a {
    text-decoration: none;
    color: inherit;
@@ -26,7 +27,12 @@ button {
    border: 0;
    outline: 0;
    cursor: pointer;
-   :focus {
+   &:focus {
       outline: 0;
+      border: 0;
+   }
+   &:active {
+      outline: 0;
+      border: 0;
    }
 }

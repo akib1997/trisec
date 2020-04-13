@@ -1,120 +1,124 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-.planner-box,
-.question-box {
-  position: fixed;
-  z-index: 11111;
-  left: 0;
-  top: 0;
-  width: 100%;
-//   overflow: auto;
-  background-color: #ffffff78;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-  transition: ease-in-out .3s;
-  display: none;
-  height: 100%;
+.question-box, 
+.planner-box{
+   background-color: #ffffff78;
 
-  @include mobile-screen {
-     overflow: scroll;
-  }
+   .modal-content {
+      box-shadow: 0px 0px 25px 2px #4640de91;
+      padding: 40px;
+      border: 0;
+      border-radius: 0;
+      max-width: 900px;
+      margin: 0 auto;
 
-
-  
-
-  .wrapper {
-     max-width: 900px;
-     width: 100%;
-     margin: 15% auto;
-     box-shadow: 0px 0px 25px 2px #4640de91;
-     background-color: $white;
-     padding: 40px;
-
-   @include medium-screen {
-      max-width: 800px;
-      padding: 20px;
-   }
- 
-   @include tab-screen {
-      max-width: 600px;
-      margin: 10% auto;
+      @include medium-screen {
+         max-width: 800px;
+         padding: 20px;
+      }
+      @include tab-screen {
+         max-width: 600px;
+      }
    }
 
-   @include mobile-screen {
-      margin: 5% auto;
+   .modal-dialog {
+      max-width: 900px;
    }
-  }
+   .modal-header {
+      border-bottom: 0;
+      padding: 0;
+      margin-bottom: 20px;
 
-  h3 {
-   @include medium-header;
-     margin-bottom: 30px;
-
-     @include tab-screen {
-        margin-bottom: 20px;
-     }
-  }
-  .close {
-   transition: ease-in-out .3s;
-   position: relative;
-   width: 50px;
-   
-   span {
-      background-color: $blue;
-      display: block;
-      position: absolute;
-
-      &.x-line {
-         width: 40px;
-         height: 3px;
-         top: 10px;
-         transform: rotate(45deg);
+      h3 {
+         @include medium-header;
       }
 
-      &.y-line {
-         width: 3px;
+      button {
+         transition: ease-in-out .3s;
+         position: relative;
+         width: 50px;
+         margin-top: 15px;
          height: 40px;
-         top: -8px;
-         left: 19px;
-         transform: rotate(45deg);
+         
+         span {
+            background-color: $blue;
+            display: block;
+            position: absolute;
+      
+            &.x-line {
+               width: 40px;
+               height: 3px;
+               top: 10px;
+               transform: rotate(45deg);
+            }
+      
+            &.y-line {
+               width: 3px;
+               height: 40px;
+               top: -8px;
+               left: 19px;
+               transform: rotate(45deg);
+            }
+         }
       }
    }
-  
-}
+   .modal-body {
+      padding: 0;
+   }
 }
 
 .planner-form,
 .question-form {
 
-   .form-group {
-      
-      input,
-      textarea {
+   label {
+      display: block;
+   }
+
+   input,
+   textarea {
       border: 1px solid $blue;
       padding: 15px 10px;
+      margin-bottom: 15px;
       color: $black;
-      margin-bottom: 20px;
       width: 100%;
 
       &::placeholder {
          color: $black;
+         opacity: 1; /* Firefox */
+      }
+      
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: $black;
+      }
+      
+      &::-ms-input-placeholder { /* Microsoft Edge */
+         color: $black;
       }
 
-         @include tab-screen {
-            padding: 5px 10px;
-            margin-bottom: 10px;
-         }
+      @include tab-screen {
+         padding: 5px 10px;
+         margin-bottom: 10px;
+      }
+      @include mobile-screen {
+         margin-bottom: 5px;
       }
    }
 
-   button {
+   .submit {
       background-color: $blue;
       text-align: center;
       text-transform: uppercase;
-      padding: 10px;
+      padding: 17px 0;
       color: $white;
       display: block;
       width: 100%;
+      margin-top: 15px;
+      transition: ease .4s;
+
+      &:hover {
+         background-color: #17129B;
+      }
    }
 
    .phone {
@@ -132,14 +136,20 @@
 }
 
 .planner-box {
-   // display: block;
 
    h6 {
       margin-bottom: 15px;
+      font-weight: $bold;
    }
 
 }
 
+.question-form {
+   p,
+   ul {
+      margin-bottom: 0;
+   }
+}
 
 
 .social {
@@ -159,7 +169,52 @@
    
 }
 
+.project-tab {
+   
+   
+   a {
+      text-transform: uppercase;
+      color: $blue;
+      position: relative;
+      border: 1px solid $blue;
+      text-align: center;
+      padding: 10px 0;
+      margin-bottom: 10px;
+      transition: ease-in-out .3s;
+      width: 32%;
 
+      @include mobile-screen {
+         width: 100%;
+      }
+
+      &.active {
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -12px;
+            margin: 0 auto;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent $blue transparent;
+         }
+      }
+      &.active {
+         background-color: $blue;
+         color: $white;
+      }
+   }
+
+   .tab-content {
+         border: 1px solid $blue;
+         padding: 3px 10px;
+   }
+
+}
 
 
 
@@ -173,4 +228,4 @@
       opacity: 1;
    }
    
- }
+}
