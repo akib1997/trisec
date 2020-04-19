@@ -101,10 +101,10 @@
       right: 0;
       z-index: 999;
       height: 50px;
-      top: 8px;
+      top: 0;
 
       @include tab-screen {
-         top: 45px;
+         top: 40px;
       }
 
 

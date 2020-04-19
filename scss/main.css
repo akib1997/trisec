@@ -803,12 +803,12 @@ button:active {
   right: 0;
   z-index: 999;
   height: 50px;
-  top: 8px;
+  top: 0;
 }
 
 @media (max-width: 768px) {
   .header .nav-btn {
-    top: 45px;
+    top: 40px;
   }
 }
 
