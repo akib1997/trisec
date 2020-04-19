@@ -14,6 +14,7 @@
          position: relative;
          left: 0;
          transition: all .5s;
+         margin-bottom: 0;
 
          @include tab-screen {
             position: absolute;
@@ -100,9 +101,10 @@
       right: 0;
       z-index: 999;
       height: 50px;
+      top: 8px;
 
       @include tab-screen {
-         top: 50px;
+         top: 45px;
       }
 
 

@@ -706,6 +706,7 @@ button:active {
   left: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -802,11 +803,12 @@ button:active {
   right: 0;
   z-index: 999;
   height: 50px;
+  top: 8px;
 }
 
 @media (max-width: 768px) {
   .header .nav-btn {
-    top: 50px;
+    top: 45px;
   }
 }
 
