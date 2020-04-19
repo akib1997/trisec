@@ -668,6 +668,10 @@ button:active {
   padding: 40px 20px;
 }
 
+.slider-services .services-box {
+  display: block;
+}
+
 @-webkit-keyframes blinking {
   from {
     color: transparent;
@@ -686,11 +690,22 @@ button:active {
   }
 }
 
-.header .nav ul {
+.header .nav {
   position: relative;
   right: -50px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+}
+
+@media (max-width: 768px) {
+  .header .nav {
+    position: unset;
+  }
+}
+
+.header .nav ul {
+  position: relative;
+  left: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 @media (max-width: 768px) {
@@ -1264,6 +1279,7 @@ button:active {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1300px) {
+  .about-trisec,
   .services {
     height: calc(100vh - 109px);
     overflow: hidden;

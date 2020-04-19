@@ -3,11 +3,17 @@
 .header {
 
    .nav {
+      position: relative;
+      right: -50px;
+
+      @include tab-screen {
+         position: unset;
+      }
 
       ul {
          position: relative;
-         right: -50px;
-         transition: all .3s;
+         left: 0;
+         transition: all .5s;
 
          @include tab-screen {
             position: absolute;
