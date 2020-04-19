@@ -29,6 +29,7 @@
       background-color: $black;
       border-radius: unset;
       margin: 5px 3px;
+      transition: .7s all;
    }
    .owl-theme .owl-dots .owl-dot.active span{
       height: 100px;
@@ -93,6 +94,11 @@
          animation-name: blinking; 
          animation-duration: .71s; 
          animation-iteration-count: infinite;
+         color: $blue;
+
+         @include mobile-screen {
+            animation-name: unset;
+         }
       }
 
       span {
@@ -131,7 +137,7 @@
    margin: 0 auto;
 
    @include tab-screen {
-      max-width: 500px;
+      max-width: 650px;
    }
 
    h2 {
@@ -149,7 +155,6 @@
       padding-bottom: 40px;
 
       @include mobile-screen {
-         margin: 5px 10%;
          padding-bottom: 20px;
       }
 
@@ -189,7 +194,7 @@
 
 .slider-services {
    .box {
-      padding-top: 40px;
+      padding: 40px 20px;
    }
 }
 

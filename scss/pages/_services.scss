@@ -100,3 +100,12 @@
    }
 
 }
+
+@media screen and (min-width: 992px) and (max-width: 1300px) {
+   
+   .services  {
+      height: calc(100vh - 109px);
+      overflow: hidden;
+   }
+}
+

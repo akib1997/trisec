@@ -99,6 +99,7 @@ if(teamBtn, overviewBtn){
 
 // Typing Effect 
 
+
 typingHeader = document.getElementById('typing-header')
 
 if(typingHeader) {
