@@ -3,10 +3,10 @@
 
 .question-box, 
 .planner-box{
-   background-color: #ffffff78;
+   background-color: #ffffffbd;
 
    .modal-content {
-      box-shadow: 0px 0px 25px 2px #4640de91;
+      box-shadow: 0px 0px 20px 2px #4640de66;
       padding: 40px;
       border: 0;
       border-radius: 0;
@@ -40,6 +40,10 @@
          width: 50px;
          margin-top: 15px;
          height: 40px;
+
+         @include mobile-screen {
+            width: 35px;
+         }
          
          span {
             background-color: $blue;
@@ -51,6 +55,13 @@
                height: 3px;
                top: 10px;
                transform: rotate(45deg);
+
+               @include mobile-screen {
+                  width: 30px;
+                  height: 3px;
+                  top: 4px;
+                  left: 5px;
+               }
             }
       
             &.y-line {
@@ -59,6 +70,13 @@
                top: -8px;
                left: 19px;
                transform: rotate(45deg);
+
+               @include mobile-screen {
+                  width: 3px;
+                  height: 30px;
+                  top: -10px;
+                  left: 20px;
+               }
             }
          }
       }
@@ -119,6 +137,10 @@
       &:hover {
          background-color: #17129B;
       }
+
+      @include tab-screen {
+         margin-bottom: 15px;
+      }
    }
 
    .phone {
@@ -138,7 +160,7 @@
 .planner-box {
 
    h6 {
-      margin-bottom: 15px;
+      margin: 20px 0;
       font-weight: $bold;
    }
 
@@ -211,7 +233,7 @@
 
    .tab-content {
          border: 1px solid $blue;
-         padding: 3px 10px;
+         padding: 15px;
    }
 
 }

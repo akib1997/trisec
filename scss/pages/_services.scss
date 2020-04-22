@@ -46,14 +46,9 @@
          transform: scale(1);
       }
 
-
-      &.big-space {
-         padding: 80px 30px;
-      }
-
-
       img {
          min-height: 90px;
+         max-width: 80px;
       }
 
       h6 {
@@ -69,6 +64,10 @@
    }
 }
 
+.services .services-box.big-space {
+   padding: 80px 30px;
+}
+
 .services .services-box {
    padding: 50px 30px;
    background-color: $white;
@@ -76,12 +75,12 @@
    img,
    h6 {
       position: relative;
-      top: -20px;
+      top: 0;
       transition: ease-in-out .3s;
    }
    &:hover img,
    &:hover h6 {
-      top: 0;
+      top: -5px;
    }
 }
 .services .tab .team .row {

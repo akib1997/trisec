@@ -9,6 +9,9 @@
    <!-- Font Awesome CSS  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
+   <!-- Lightbox CSS CDN  -->
+   <link rel="stylesheet" href="./src/css/lightbox.css">
+
    <!-- Owl Carousel CSS  -->
    <link rel="stylesheet" href="./css/dist/assets/owl.carousel.min.css">
    <link rel="stylesheet" href="./css/dist/assets/owl.theme.default.min.css">
@@ -71,7 +74,7 @@
                            <button class="tabBtn active" id="overviewBtn">Overview</button>
                         </div>
                         <div class="col-6">
-                           <button class="tabBtn" id="teamBtn">Work Iamge Gallery</button>
+                           <button class="tabBtn" id="teamBtn">Work Images</button>
                         </div>
                      </div>
                      <div class="overview" id="overviwe">
@@ -96,19 +99,27 @@
                            <div class="row">
                               <div class="col-6">
                                  <div class="gallery-img">
-                                    <img src="./Images/gallery 1.png" alt="Gallery Image">
+                                    <a href="./Images/gallery 1.png" data-lightbox="gallery-img">
+                                       <img src="./Images/gallery 1.png" alt="Gallery Image">
+                                    </a>
                                  </div>
                                  <div class="gallery-img">
-                                    <img src="./Images/gallery 2.png" alt="Gallery Image">
+                                    <a href="./Images/gallery 2.png" data-lightbox="gallery-img">
+                                       <img src="./Images/gallery 2.png" alt="Gallery Image">
+                                    </a>
                                  </div>
                               </div>
 
                               <div class="col-6">
                                  <div class="gallery-img">
-                                    <img src="./Images/gallery 3.png" alt="Gallery Image">
+                                    <a href="./Images/gallery 3.png" data-lightbox="gallery-img">
+                                       <img src="./Images/gallery 3.png" alt="Gallery Image">
+                                    </a>
                                  </div>
                                  <div class="gallery-img">
-                                    <img src="./Images/gallery4.png" alt="Gallery Image">
+                                    <a href="./Images/gallery4.png" data-lightbox="gallery-img">
+                                       <img src="./Images/gallery4.png" alt="Gallery Image">
+                                    </a>
                                  </div>
                               </div>
                            </div>
@@ -122,8 +133,6 @@
 
    </section>
    <!-- Start Home Page Header -->
-
-
 
 
    <!-- Planner Box  -->
@@ -279,6 +288,9 @@
    <!-- Question Box  -->
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <!-- Lightbox JS  -->
+   <script src="./src/js/lightbox.js"></script>
+
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>
@@ -290,8 +302,17 @@
       crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
    <script src="./js/select.js"></script>
-   <script src="./js/main.js"></script>
 
+
+
+   <script src="./js/main.js"></script>
+   <script>
+      lightbox.option({
+         'resizeDuration': 200,
+         'wrapAround': true,
+         'maxWidth': 600
+      })
+   </script>
 </body>
 
 </html>

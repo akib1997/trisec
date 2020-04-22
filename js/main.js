@@ -44,6 +44,8 @@ navBtn.addEventListener('click', () => {
 //    planner.style.display = 'none'
 // })
 
+// Lightbox
+
 
 // Call Carousel
 
@@ -65,6 +67,11 @@ $(document).ready(function () {
             items: 1
          }
       }
+   });
+
+   lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
    })
 });
 
